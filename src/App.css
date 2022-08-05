@@ -70,4 +70,16 @@ address{
 
 .navbar-dark {
   background-color: #512DA8;
+ 
+}
+.leaders{
+  margin:0;
+  padding: 0;
+  font-variant: initial;
+  text-align: start;
+  
+}
+#Modall{
+  z-index: 10;
+
 }
