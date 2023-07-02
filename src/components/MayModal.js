@@ -1,16 +1,21 @@
+
 import React from "react";
-import { Button} from "reactstrap";
 const MODALS_STYLES={
     position:'fixed',
     top:'50%',
     left:'50%',
     width:'450px',
     height:'350px',
-    transition:'3ms',
+    transition:'0.6s',
     transform:'translate(-50%,-50%)',
     backgroundColor:'#FFF',
     zIndex:1000,
-    justifyContent:'space-between'
+    justifyContent:'space-between',
+    padding:"5px",
+    alighnContent:'center',
+    animationDelay:'0.6s',
+    boxSizing: 'content-box'
+
 
 }
 const OVERLAY_STYLES={
@@ -23,7 +28,24 @@ const OVERLAY_STYLES={
     zIndex:100
 }
 const BUTTON={
-    cursor:'pointer'
+  position:'absolute',
+    cursor:'pointer',
+    right:0,
+    top:0,
+    backgroundColor:'rgb(255,255,255)',
+    color:'#777777',
+    fontSize:'14px',
+    fontFamily:'Arial',
+    outline:'white',
+    boxShadow:'none',
+    borderStyle:'none',
+    borderRadius:'5px'
+}
+const Container={
+ position:'absolute',
+ right:'80%',
+ bottom:0,
+ 
 }
 export default function MayModal({open,children,onClose}) {
     if(!open)return null
@@ -32,9 +54,11 @@ export default function MayModal({open,children,onClose}) {
     <>
     <div style={OVERLAY_STYLES}>
     <div style={MODALS_STYLES}>
+    <button style={BUTTON}  outline onClick={onClose}><span className="fa fa-close fa-lg" >   </span></button>       
     {children}
-  <Button style={BUTTON}  outline onClick={onClose}><span className="fa fa-sign-in fa-lg"></span> Close</Button>       
-       
+
+ 
+  
         </div>
         </div>
         </>
